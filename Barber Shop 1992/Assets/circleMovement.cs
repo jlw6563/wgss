@@ -11,12 +11,16 @@ public class circleMovement : MonoBehaviour
 
     float timer = 0;
     Vector3 direction = Vector3.left;
-    
-  
+
+
+    private void Start()
+    {
+        transform.position = new Vector3(0, 0, 0);
+    }
 
     // Update is called once per frame
     void Update()
-    {
+    {    
         transform.position += direction * speed * Time.deltaTime;
         
     }
