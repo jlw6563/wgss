@@ -1,11 +1,15 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     float speed;
+    [SerializeField]
+    SpriteRenderer InteractKey;
 
     //We should try normalizing movement to make sure player speed is the same when 2 keys are pressed
 
@@ -32,6 +36,22 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             transform.position += Vector3.down.normalized * speed * Time.deltaTime;
+        }
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "InteractRadius")
+        {
+            Debug.Log("Inside");
+            InteractKey.gameObject.SetActive(true);
+        }
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "InteractRadius")
+        {
+            Debug.Log("Outside");
+            InteractKey.gameObject.SetActive(false);
         }
     }
 }

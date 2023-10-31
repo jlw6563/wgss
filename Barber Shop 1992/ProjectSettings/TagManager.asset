@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bounce
+  - InteractRadius
   layers:
   - Default
   - TransparentFX
