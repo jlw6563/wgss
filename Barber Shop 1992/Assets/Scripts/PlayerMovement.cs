@@ -8,10 +8,6 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     float speed;
-    [SerializeField]
-    SpriteRenderer InteractKey;
-
-    //We should try normalizing movement to make sure player speed is the same when 2 keys are pressed
 
     // Update is called once per frame
     void Update()
@@ -37,12 +33,8 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position += Vector3.down.normalized * speed * Time.deltaTime;
         }
-        //Interact button e is pressed
-        if(Input.GetKey(KeyCode.E))
-        {
-
-        }
     }
+    /* Commenting this out for now, can prbly just delete
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "InteractRadius")
@@ -58,5 +50,5 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Outside");
             InteractKey.gameObject.SetActive(false);
         }
-    }
+    } */
 }
