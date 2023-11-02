@@ -37,6 +37,11 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position += Vector3.down.normalized * speed * Time.deltaTime;
         }
+        //Interact button e is pressed
+        if(Input.GetKey(KeyCode.E))
+        {
+
+        }
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
