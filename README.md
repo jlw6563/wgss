@@ -1,4 +1,4 @@
-# wgss
+# WGSS
 Barber Shop 1992
 
 Chinmay Gaikwad
